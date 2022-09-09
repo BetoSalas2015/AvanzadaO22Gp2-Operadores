@@ -1,4 +1,4 @@
-// Sesión 11 - 07/09/2022
+// Sesión 12 - 09/09/2022
 #include <stdio.h>
 #include <stdlib.h>
 #include "defs.h"
@@ -18,7 +18,7 @@ void bases()
 	printf("B3 Base 16 equivale a %o Base 8\n", a);
 }
 
-void unarios()
+void primarios()
 {
 	//  Jerarquía nivel 1 - Operadores Primarios
 	//  Operador Llamada a función ( () )
@@ -42,7 +42,48 @@ void unarios()
 }
 int main()
 {	
+	//  Jerarquía nivel 2 - Operadores unarios
+	//  Operador negación lógica ( ! )
+	//  0 => false, cualquier otra cosa => true
+	a = 5666;			//  guardo true
+	if( 0 )
+		printf("Es verdadero\n");
+	else
+		printf("Es falso \n");
+
+	a =566;
+	PRINT2(d, a, !a);
+	PRINT2(d, a, !!!a);
+	PRINT2(d, a, !!!!!!!!!!!!!!!!!!!!!a);
+
+	//  Opreador menos unario ( - ) - unario
+	a = -3;
+	b = 3;
+	PRINT2(d, a, b);
+
+	//  Operador Complemento a uno ( ~ )
+	a = 20;
+	PRINT2(d, a, ~a);
+
+	//  Operadores Incremento ( ++ ) y decremento ( -- )
+	a = 20;
+	a++;
+	PRINT1(d, a);
+	a = 20;
+	++a;
+	PRINT1(d, a);
+	a = 20;
+	PRINT2(d, a++, a);
+	a = 20;
+	PRINT2(d, ++a, a);
+	a = 20; b = 10;
+	PRINT1(d, a+++b );
+	PRINT2(d, a, b);
+	a = 20; b = 10;
+	PRINT1(d, a++ + ++b );
+	PRINT2(d, a, b);
 	
+
 	pausa;
 	cls;
 	return 0;
