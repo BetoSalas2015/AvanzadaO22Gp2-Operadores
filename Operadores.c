@@ -1,4 +1,4 @@
-// Sesión 12 - 09/09/2022
+// Sesión 13 - 12/09/2022
 #include <stdio.h>
 #include <stdlib.h>
 #include "defs.h"
@@ -18,7 +18,7 @@ void bases()
 	printf("B3 Base 16 equivale a %o Base 8\n", a);
 }
 
-void primarios()
+void unarios()
 {
 	//  Jerarquía nivel 1 - Operadores Primarios
 	//  Operador Llamada a función ( () )
@@ -40,9 +40,9 @@ void primarios()
 	PRINT1(d, ptrJuanito->edad);
 
 }
-int main()
-{	
-	//  Jerarquía nivel 2 - Operadores unarios
+void primarios()
+{
+//  Jerarquía nivel 2 - Operadores unarios
 	//  Operador negación lógica ( ! )
 	//  0 => false, cualquier otra cosa => true
 	a = 5666;			//  guardo true
@@ -56,7 +56,7 @@ int main()
 	PRINT2(d, a, !!!a);
 	PRINT2(d, a, !!!!!!!!!!!!!!!!!!!!!a);
 
-	//  Opreador menos unario ( - ) - unario
+	//  Operador menos unario ( - ) - unario
 	a = -3;
 	b = 3;
 	PRINT2(d, a, b);
@@ -83,9 +83,49 @@ int main()
 	PRINT1(d, a++ + ++b );
 	PRINT2(d, a, b);
 	
+	//  Operador Dirección ( & ) - unario
+	ptrJuanito = &Juanito;	// La direccion de memoria de la variable Juanito
+
+	//  Operador indirección ( * ) - unario
+	a = 20;
+	b = 10;
+	PRINT1(d, a);
+	ptr = &a;
+	*ptr = 30;
+	PRINT1(d, a);
+	
+	//  Operador Tamaño de ( sizeof )
+	printf("El tamaño del tipo char es de %d bytes \n", sizeof( char ) );
+	printf("El tamaño del tipo int es de %d bytes \n", sizeof( int ) );
+	printf("El tamaño del tipo float es de %d bytes \n", sizeof( float ) );
+	printf("El tamaño del tipo double es de %d bytes \n", sizeof( double ) );
+	printf("El tamaño del tipo struct Persona es de %d bytes \n", sizeof( struct Persona ) );
+	printf("El tamaño del ptr es de %d bytes \n", sizeof( ptr ) );
+
+	//  Operador Cast ( (tipo dato) ) - Conversión de datos
+	car = 75;
+	PRINT1(c, car);
+	PRINT1(d, car);
+
+	//  Promocion de tipos
+	//  char -> int -> float -> double
+	a = car;			// char -> int
+	f = a;				// int -> float
+	h = f;				// float a double
+	f = h;				// "Pérdida de datos"
+
+	a = (int) car;		// Conversión "explícita" de datos
+	f = (float) a;
+	h = (double) f;
+	f = (float) h;
+}
+
+int main()
+{	
+	
 
 	pausa;
 	cls;
-	return 0;
+	return 0
 }
 
