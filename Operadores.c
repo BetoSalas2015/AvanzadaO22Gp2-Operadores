@@ -1,4 +1,4 @@
-// Sesión 13 - 12/09/2022
+// Sesión 14 - 14/09/2022
 #include <stdio.h>
 #include <stdlib.h>
 #include "defs.h"
@@ -24,7 +24,7 @@ void unarios()
 	//  Operador Llamada a función ( () )
 	printf("Ahi te va un numero aleatorio: %i\n", rand() );
 
-	PRINT1(f, 5 / 9.0 * 80 - 32);		//  jerarquía normal
+	PRINT1(f, 5 / 9.0 * 80 - 32);		//  jerarquía normal (división flotante)
 	PRINT1(f, 5 / 9.0 * (80 - 32) );		//  jerarquía alterada
 
 	// Operador Indice de arreglo ( [] )
@@ -120,12 +120,35 @@ void primarios()
 	f = (float) h;
 }
 
+void multiplicativos() 
+{
+	// Jerarquía nivel 3 - Operadores Multiplicativos
+	// Operdor Multiplicación ( * ) - Binario
+	a = 20; b = 15;
+	PRINT1(d, a * b);
+
+	// Operador División ( / ) 
+	PRINT1(d, a / b);		//  División entera: entero / entero = entero
+	PRINT1(f, (float) a / b);
+	PRINT1(f,  a /(float) b);
+	PRINT1(f, (float) a /(float) b);
+
+	// Operador Residuo ( % )
+	PRINT1(d, a % b);	
+}
 int main()
 {	
-	
+	//  Jerarquía nivel 4 - Operadores aditivos
+	// Operador Suma ( + ) - Binario
+	a = 20; b = 15;
+	PRINT1(d, a + b);
+
+	// Operador Resta ( - ) - Binario
+	a = 20; b = 15;
+	PRINT1(d, a - b);
 
 	pausa;
 	cls;
-	return 0
+	return 0;
 }
 
