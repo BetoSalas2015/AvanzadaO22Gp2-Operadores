@@ -1,4 +1,4 @@
-// Sesión 14 - 14/09/2022
+// Sesión 15 - 19/09/2022
 #include <stdio.h>
 #include <stdlib.h>
 #include "defs.h"
@@ -136,8 +136,8 @@ void multiplicativos()
 	// Operador Residuo ( % )
 	PRINT1(d, a % b);	
 }
-int main()
-{	
+void aditivos() 
+{
 	//  Jerarquía nivel 4 - Operadores aditivos
 	// Operador Suma ( + ) - Binario
 	a = 20; b = 15;
@@ -146,6 +146,65 @@ int main()
 	// Operador Resta ( - ) - Binario
 	a = 20; b = 15;
 	PRINT1(d, a - b);
+}
+void desplazamiento()
+{
+	// Jerarquía nivel 5 - Operadores de Desplazamiento
+	// Operador Desplazamiento a la izquierda ( << )
+	a = 45;
+	PRINT1(d, a);
+	PRINT1(d, a << 1);
+	PRINT1(d, a << 2);
+	PRINT1(d, a << 3);
+
+	// Operador Desplazamiento a la izquierda ( << )
+	a = 180;
+	PRINT1(d, a);
+	PRINT1(d, a >> 1);
+	PRINT1(d, a >> 2);
+	PRINT1(d, a >> 3);
+}
+void relacionales()
+{
+	// Jerarquíoa nivel 6 - Operadores Relacionales
+	a = 20; b = 30;
+	PRINT3(d , a, b, a < b);		// Operador menor que ( < )
+	PRINT3(d , a, b, a <= b);		// Operador menor o igual que ( <= )
+	PRINT3(d , a, b, a > b);		// Operador mayor que ( > )
+	PRINT3(d , a, b, a >= b);		// Operador mayor o igual que ( >= )
+}
+
+void igualdad()
+{
+	// Jerarquía nivel 7 - Operadores de igualdad
+	a = 20; b = 30;
+	PRINT3(d , a, b, a == b);		// Operador igual que ( == )
+	PRINT3(d , a, b, a != b);		// Operador no igual que o diferente de  ( == )
+}
+void deBits()
+{
+	//  Operadores de Bits
+	// Jerarquía nivel 8 - AND de Bits ( & ) - Binario
+	a = 47; b = 35;
+	PRINT3(d, a, b, a & b);
+	// Jerarquía nivel 9 - OR de Bits ( | )
+	a = 47; b = 35;
+	PRINT3(d, a, b, a | b);
+	// Jerarquía nivel 10 - XOR de Bits ( ^ ) - Binario
+	a = 47; b = 35;
+	PRINT3(d, a, b, a ^ b);
+}
+
+
+int main()
+{	
+		//  Operadores de lógicos
+	// Jerarquía nivel 11 - AND lógico ( && )
+	a = 47; b = 35;
+	PRINT3(d, a, b, a && b);
+	// Jerarquía nivel 12 - OR lógico ( || )
+	a = 47; b = 35;
+	PRINT3(d, a, b, a || b);
 
 	pausa;
 	cls;
